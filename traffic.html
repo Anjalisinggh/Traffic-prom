@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Navigator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px;
+            border: none;
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .routes {
+            margin-top: 15px;
+        }
+        .route {
+            background: #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Traffic Navigator</h2>
+    <input type="text" id="location" placeholder="Enter your destination">
+    <button onclick="getRoutes()">Find Routes</button>
+    <div class="routes" id="routes"></div>
+</div>
+
+<script>
+    function getRoutes() {
+        const location = document.getElementById("location").value;
+        const routesContainer = document.getElementById("routes");
+        routesContainer.innerHTML = ""; 
+
+        if (location.trim() === "") {
+            alert("Please enter a destination.");
+            return;
+        }
+
+        // Example routes (you can integrate with an API like Google Maps)
+        const routes = [
+            "Route 1: Main Street → Park Avenue → Destination",
+            "Route 2: Highway 10 → Downtown → Destination",
+            "Route 3: Local Roads → City Center → Destination"
+        ];
+
+        routes.forEach(route => {
+            const routeDiv = document.createElement("div");
+            routeDiv.className = "route";
+            routeDiv.innerText = route;
+            routesContainer.appendChild(routeDiv);
+        });
+    }
+</script>
+
+</body>
+</html>
