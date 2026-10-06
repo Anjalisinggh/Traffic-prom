@@ -2,8 +2,6 @@
 
 A small single-page prototype for a route finder: enter a destination and it lists route options to get there.
 
-**Live:** [traffic-prom.vercel.app](https://traffic-prom.vercel.app)
-
 ## How it works
 
 - Type a destination and press **Find Routes**.
